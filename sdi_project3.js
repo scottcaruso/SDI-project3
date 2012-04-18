@@ -2,14 +2,22 @@
 var bugsPerHour = .2;
 var fixedPerHour = 1; //set this to a high value (i.e. 5) in order to test the else condition.
 
+
 //The below object details out information about the QA team.
 var qaTeam = {
 	isDoneFindingBugs: true, 
 	manager: {
-		name: "Scott",
+		name: "Guybrush Threepwood",
 		age: 30,
-		isBurnedOut: true
-		},
+		isBurnedOut: true,
+		getCurrentStatus: function () {
+			if (qaTeam.manager.isBurnedOut = true){
+				console.log(qaTeam.manager.name + " is burned out after all of this work. He may be " + qaTeam.manager.age + " years old, but right now, he feels like he is about " + (qaTeam.manager.age + 30) + ".");
+			} else {
+				console.log(qaTeam.manager.name + " is in surprisingly good condition even though his team has worked " + qaTeam.realHoursWorked + " on this project.");
+			};
+		}
+	},
 	numberOfTesters: 12,
 	realHoursWorked: 4000,
 	bugsFound: function (bugsPerHour) {
@@ -42,6 +50,8 @@ var devTeam = {
 //The below determines if the QA Team is done fixing bugs.
 if (qaTeam.isDoneFindingBugs = true){
 	console.log("QA is done finding bugs! Now, let's fix them all!");
+	qaTeam.manager.getCurrentStatus();
+	
 	//The below determines if the Dev Team needs to work more hours to fix all of the bugs.
 	var bugsFound = qaTeam.bugsFound(bugsPerHour);
 	var bugsFixed = devTeam.bugsFixed(fixedPerHour);
@@ -55,10 +65,12 @@ if (qaTeam.isDoneFindingBugs = true){
 			var days = 0;
 			var i = bugDebt-canFixDaily;
 			while (i > 0) {
-				console.log("We fixed " + canFixDaily + " bugs yesterday, but we still have " + i + " more bugs to fix before we are done.");
+				//commenting out - don't want to see this dozens of times
+				//console.log("We fixed " + canFixDaily + " bugs yesterday, but we still have " + i + " more bugs to fix before we are done.");
 				i-=canFixDaily;
 				days++;
 			};
+				console.log("...many days later...");
 				console.log("Finally! It only took us " + days + " days to get there, but we finally fixed all of the bugs!");
 				devTeam.isDoneFixingBugs = true;
 		} else {
@@ -66,7 +78,8 @@ if (qaTeam.isDoneFindingBugs = true){
 		devTeam.isDoneFixingBugs = true;
 	};
 } else {
-	console.log("QA still has bugs to find. Let's wait until they are done before fixing bugs.")
+	console.log("QA still has bugs to find. Let's wait until they are done before fixing bugs.");
+	
 };
 
 
