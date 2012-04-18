@@ -82,8 +82,23 @@ if (qaTeam.isDoneFindingBugs = true){
 	
 };
 
+//This is what happens when the game has been finished.
+if (days > 15){
+	console.log("Since it took us more than 15 days to finish the game, we had to bring on an additional engineer to the team!")
+	console.log("Barack came on board to help us out, so we'll make sure he is invited to the wrap party!")
+	devTeam.namesOfEngineers.push("Barack");
+	console.log("So, now, our engineer list looks like this: " + devTeam.namesOfEngineers);
+}
 
-console.log (days);
+console.log("We know that those QA guys can drink a lot. We need to fire some before the wrap party!");
+console.log("We can only afford enough for 4 testers...");
+for (var i = qaTeam.numberOfTesters; i > 4; i--) {
+	var x = qaTeam.numberOfTesters-i;
+	console.log("We've fired " + x + " testers so far, leaving a total of " + i + ". Fire some more!")
+};
+	console.log("Let's put out a press release saying that we had to boldly cut " + (x + 1) + " jobs to remain viable!");
+	console.log("Now we can afford to throw our wrap party!");
+
 
 //This was to verify that my mutator worked.
 console.log(devTeam.isDoneFixingBugs);
