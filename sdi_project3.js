@@ -65,7 +65,7 @@ if (qaTeam.isDoneFindingBugs = true){
 			var days = 0;
 			var i = bugDebt-canFixDaily;
 			while (i > 0) {
-				//commenting out - don't want to see this dozens of times
+				//commenting out - don't want to see this dozens of times. Good for testing purposes.
 				//console.log("We fixed " + canFixDaily + " bugs yesterday, but we still have " + i + " more bugs to fix before we are done.");
 				i-=canFixDaily;
 				days++;
@@ -94,10 +94,16 @@ console.log("We know that those QA guys can drink a lot. We need to fire some be
 console.log("We can only afford enough for 4 testers...");
 for (var i = qaTeam.numberOfTesters; i > 4; i--) {
 	var x = qaTeam.numberOfTesters-i;
-	console.log("We've fired " + x + " testers so far, leaving a total of " + i + ". Fire some more!")
+	//commenting out - don't need to see repeatedly. console.log("We've fired " + x + " testers so far, leaving a total of " + i + ". Fire some more!")
 };
 	console.log("Let's put out a press release saying that we had to boldly cut " + (x + 1) + " jobs to remain viable!");
 	console.log("Now we can afford to throw our wrap party!");
+
+/*NOTES FOR WEDNESDAY
+Pass an entire object into some kind of procedure. Add a new key:value pair to that object and spit it back out as a new object
+Use the new key:value pair somehow string.
+Finish the story, then cobble together some JSON variables to finish it off.
+*/
 
 
 //This was to verify that my mutator worked.
