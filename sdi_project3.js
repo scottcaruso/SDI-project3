@@ -1,10 +1,10 @@
 //World variables
-
 var bugsPerHour = .2;
 var fixedPerHour = 1; //set this to a high value (i.e. 5) in order to test the else condition.
 
 //The below object details out information about the QA team.
-var qaTeam = { 
+var qaTeam = {
+	isDoneFindingBugs: true, 
 	manager: "Scott",
 	numberOfTesters: 12,
 	realhoursWorked: 4000,
@@ -17,9 +17,11 @@ var qaTeam = {
 
 //The below object details out information about the development team.
 var devTeam = {
+	isDoneFixingBugs: false,
 	methodology: "scrum",
-	numberOfEngineers: 10,
-	realhoursWorked: 500,
+	numberOfEngineers: 5,
+	realhoursWorked: 920,
+	namesOfEngineers: ["Dave","Roscoe","Stella","Jamie","Cobalt"],
 	bugsFixed: function (fixedPerHour) {
 		var fixedPerHour = fixedPerHour;
 		var manhours = (devTeam.realhoursWorked * devTeam.numberOfEngineers);
@@ -47,17 +49,21 @@ if (bugsFound > bugsFixed){
 			days++;
 		};
 			console.log("Finally! It only took us " + days + " days to get there, but we finally fixed all of the bugs!");
+			devTeam.isDoneFixingBugs = true;
 	} else {
-	console.log("We've beaten the QA team without any additional work and fixed all of the bugs! Time for a pants party!")
+	console.log("We've beaten the QA team without any additional work and fixed all of the bugs! Time for a pants party!");
+	devTeam.isDoneFixingBugs = true;
 };
+console.log(devTeam.isDoneFixingBugs);
+
 
 /*The below logs verify that the objects are properly outputting. Uncomment to verify.
 console.log( qaTeam );
 console.log(qaTeam.manager);
 console.log(qaTeam.numberOfTesters);
-console.log(qaTeam.bugsFound(.2));
+console.log(qaTeam.bugsFound(bugsPerHour);
 console.log(devTeam.methodology);
 console.log(devTeam.numberOfEngineers);
 console.log(devTeam.realhoursWorked);
-console.log(devTeam.bugsFixed(.15));
+console.log(devTeam.bugsFixed(fixedPerHour));
 */
