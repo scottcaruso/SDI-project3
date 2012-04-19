@@ -2,7 +2,6 @@
 var bugsPerHour = .2;
 var fixedPerHour = 1; //set this to a high value (i.e. 5) in order to test the else condition.
 
-
 //The below object details out information about the QA team.
 var qaTeam = {
 	isDoneFindingBugs: true, 
@@ -99,25 +98,27 @@ for (var i = qaTeam.numberOfTesters; i > 4; i--) {
 	console.log("Let's put out a press release saying that we had to boldly cut " + (x + 1) + " jobs to remain viable!");
 	console.log("Now we can afford to throw our wrap party!");
 
+console.log("... A few months later ...")
+console.log("The reviews have started to come in! Let's check out our scores!")
+var getMetacritic = function(){
+	for (var n in json.reviewers){
+		console.log(json.reviewers[n].score);
+	};
+};
+getMetacritic();
+
+
 /*NOTES FOR WEDNESDAY
 Pass an entire object into some kind of procedure. Add a new key:value pair to that object and spit it back out as a new object
 Use the new key:value pair somehow string.
 Finish the story, then cobble together some JSON variables to finish it off.
 */
 
-var handleData = function(json){
-	console.log(json)
-};
-handleData(json);
-
-
-//This was to verify that my mutator worked.
+/*This was to verify that my mutator worked.
 console.log(devTeam.isDoneFixingBugs);
-
 var hours = devTeam.getHoursWorked();
 console.log(hours);
-
-console.log(handleData);
+*/
 
 /*The below logs verify that the objects are properly outputting. Uncomment to verify.
 console.log( qaTeam );
