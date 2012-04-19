@@ -105,12 +105,19 @@ Use the new key:value pair somehow string.
 Finish the story, then cobble together some JSON variables to finish it off.
 */
 
+var handleData = function(json){
+	console.log(json)
+};
+handleData(json);
+
 
 //This was to verify that my mutator worked.
 console.log(devTeam.isDoneFixingBugs);
 
 var hours = devTeam.getHoursWorked();
 console.log(hours);
+
+console.log(handleData);
 
 /*The below logs verify that the objects are properly outputting. Uncomment to verify.
 console.log( qaTeam );
