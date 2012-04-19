@@ -40,19 +40,17 @@ var devTeam = {
 		return hoursWorked;
 		},
 	bugsFixed: function (fixedPerHour) {
-		var fixedPerHour = fixedPerHour;
 		var manhours = (devTeam.realHoursWorked * devTeam.numberOfEngineers);
 		var bugsFixed = (fixedPerHour * manhours);
 		return bugsFixed; 
-		return fixedPerHour;
 	},
 };
 
 console.log("We're trying to final " + nameOfGame + ", which is sure to be the best " + genre + " game released this year!");
-console.log("With the bizarre version of " + devTeam.methodology + " that we are using, we wait until QA is done testing before we fix bugs. Let's see how they are doing!");
+console.log("With the bizarre version of " + devTeam.methodology + " that we are using, we wait until QA is done testing before we fix bugs. Let's see how they are doing.");
 
 //The below determines if the QA Team is done finding bugs.
-if (qaTeam.isDoneFindingBugs = true){
+if (qaTeam.isDoneFindingBugs === true){
 	console.log("QA is done finding bugs! Now, let's fix them all!");
 	console.log("But first, let's check on the status of the QA manager! It will be easier to defer bugs if he's too burned out to notice!");
 	qaTeam.manager.getCurrentStatus();
@@ -82,10 +80,7 @@ if (qaTeam.isDoneFindingBugs = true){
 		console.log("We've beaten the QA team without any additional work and fixed all of the bugs! Time for a pants party!");
 		devTeam.isDoneFixingBugs = true;
 	};
-} else {
-	console.log("QA still has bugs to find. Let's wait until they are done before fixing bugs.");
-	
-};
+
 
 //This is what happens when the game has been finished.
 if (days > 15){
@@ -113,7 +108,9 @@ var getMetacritic = function(){
 };
 getMetacritic();
 console.log("Sounds like profit to me! Let's make the same game next year!");
-
+} else {
+	console.log("QA still has bugs to find. We cannot proceed until they are done.");
+};
 /*This was to verify that my mutator worked.
 console.log(devTeam.isDoneFixingBugs);
 var hours = devTeam.getHoursWorked();

@@ -6,25 +6,29 @@
 
 var json = {
 	"reviewers" : {
-		"Game Amateur" : {
+		"id001" : {
+			"name" : "Game Amateur",
 			"score" : 80,
 			"type" : "casual",
 			"advertiseWith" : false
 		},
-		"PGN" : {
+		"id002" : {
+			"name" : "YGN",
 			"score" : 85,
 			"type" : "hardcore",
 			"advertiseWith" : true
 		},
-		"GameFido" : {
+		"id003" : {
+			"name" : "GameFido",
 			"score" : 60,
 			"type" : "mainstream",
 			"advertiseWith" : true
 		},				 
-		"Dave's Game Haven" : {
+		"id004" : {
+			"name" : "Dave's Awesome Blog",
 			"score" : 95,
 			"type" : "hardcore",
 			"advertiseWith" : false
-		},			
+		}	
 	}
 }
