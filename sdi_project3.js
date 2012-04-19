@@ -1,4 +1,6 @@
 //World variables
+var nameOfGame = "Generic Football Simulator 2013";
+var genre = "sports";
 var bugsPerHour = .2;
 var fixedPerHour = 1; //set this to a high value (i.e. 5) in order to test the else condition.
 
@@ -46,9 +48,13 @@ var devTeam = {
 	},
 };
 
-//The below determines if the QA Team is done fixing bugs.
+console.log("We're trying to final " + nameOfGame + ", which is sure to be the best " + genre + " game released this year!");
+console.log("With the bizarre version of " + devTeam.methodology + " that we are using, we wait until QA is done testing before we fix bugs. Let's see how they are doing!");
+
+//The below determines if the QA Team is done finding bugs.
 if (qaTeam.isDoneFindingBugs = true){
 	console.log("QA is done finding bugs! Now, let's fix them all!");
+	console.log("But first, let's check on the status of the QA manager! It will be easier to defer bugs if he's too burned out to notice!");
 	qaTeam.manager.getCurrentStatus();
 	
 	//The below determines if the Dev Team needs to work more hours to fix all of the bugs.
@@ -106,13 +112,7 @@ var getMetacritic = function(){
 	};
 };
 getMetacritic();
-
-
-/*NOTES FOR WEDNESDAY
-Pass an entire object into some kind of procedure. Add a new key:value pair to that object and spit it back out as a new object
-Use the new key:value pair somehow string.
-Finish the story, then cobble together some JSON variables to finish it off.
-*/
+console.log("Sounds like profit to me! Let's make the same game next year!");
 
 /*This was to verify that my mutator worked.
 console.log(devTeam.isDoneFixingBugs);
